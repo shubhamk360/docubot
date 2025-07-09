@@ -13,30 +13,30 @@ def load_documents(files=None, url=None):
     if files:
         for file in files:
             suffix = file.name.split(".")[-1].lower()
-            print(f"🧾 Processing file: {file.name} ({suffix})")
+            print(f"Processing file: {file.name} ({suffix})")
             try:
                 with tempfile.NamedTemporaryFile(delete=False, suffix=f".{suffix}") as tmp:
                     tmp.write(file.read())
                     tmp_path = tmp.name
 
-                # ✅ Safer DOCX
+                # Safer DOCX
                 if suffix == "docx":
                     from docx import Document as DocxDocument
                     text = "\n".join([p.text for p in DocxDocument(tmp_path).paragraphs])
                     docs.append(Document(page_content=text, metadata={"source": file.name}))
 
-                # ✅ Safer PDF (fallback to PyMuPDF)
+                # Safer PDF (fallback to PyMuPDF)
                 elif suffix == "pdf":
                     try:
                         loader = PyMuPDFLoader(tmp_path)
                         file_docs = loader.load()
                         docs.extend(file_docs)
-                        print(f"✅ Loaded PDF with {len(file_docs)} pages")
+                        print(f"Loaded PDF with {len(file_docs)} pages")
                     except Exception as e:
-                        print(f"❌ Failed to load PDF: {e}")
+                        print(f"Failed to load PDF: {e}")
 
 
-                # ✅ Safer Image (fallback to Tesseract OCR)
+                # Safer Image (fallback to Tesseract OCR)
                 elif suffix in ["jpg", "jpeg", "png"]:
                     try:
                         from PIL import Image
@@ -45,20 +45,20 @@ def load_documents(files=None, url=None):
                         image = Image.open(tmp_path)
                         text = pytesseract.image_to_string(image)
                         docs.append(Document(page_content=text, metadata={"source": file.name}))
-                        print(f"✅ Image processed with Tesseract OCR: {file.name}")
+                        print(f"Image processed with Tesseract OCR: {file.name}")
                     except Exception as e:
-                        print(f"❌ Failed to OCR image {file.name}: {e}")
+                        print(f"Failed to OCR image {file.name}: {e}")
 
                 else:
-                    print(f"❌ Unsupported file type: {suffix}")
+                    print(f"Unsupported file type: {suffix}")
                     continue
 
             except Exception as e:
-                print(f"❌ Error processing file {file.name}: {e}")
+                print(f"Error processing file {file.name}: {e}")
 
-    # ✅ Handle URL input
+    # Handle URL input
     if url:
-        print(f"🌐 Loading from URL: {url}")
+        print(f"Loading from URL: {url}")
         try:
             if "youtube.com" in url or "youtu.be" in url:
                 try:
@@ -72,14 +72,14 @@ def load_documents(files=None, url=None):
                     if caption:
                         caption_text = caption.generate_srt_captions()
                     else:
-                        print("⚠️ No captions found, using video description")
+                        print("No captions found, using video description")
                         caption_text = yt.description
 
                     docs.append(Document(page_content=caption_text, metadata={"source": url}))
-                    print(f"✅ Loaded YouTube transcript/description from: {url}")
+                    print(f"Loaded YouTube transcript/description from: {url}")
 
                 except Exception as e:
-                    print(f"❌ Failed to load YouTube video: {e}")
+                    print(f"Failed to load YouTube video: {e}")
                     from yt_dlp import YoutubeDL
                     from bs4 import BeautifulSoup
 
@@ -121,14 +121,14 @@ def load_documents(files=None, url=None):
                     text = text.strip()
                     if text:
                         docs.append(Document(page_content=text, metadata={"source": url}))
-                        print(f"✅ Loaded {len(text.split())} words from webpage.")
+                        print(f"Loaded {len(text.split())} words from webpage.")
                     else:
-                        print("⚠️ Webpage loaded but returned no readable content.")
+                        print("Webpage loaded but returned no readable content.")
                 except Exception as e:
-                    print(f"❌ Error parsing webpage manually: {e}")
+                    print(f"Error parsing webpage manually: {e}")
 
 
         except Exception as e:
-            print(f"❌ Error loading URL: {e}")
+            print(f"Error loading URL: {e}")
 
     return docs

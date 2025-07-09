@@ -1,6 +1,6 @@
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_cohere import CohereEmbeddings
-from langchain_community.vectorstores import Chroma
+from langchain_community.vectorstores import FAISS
 from langchain.chains import RetrievalQA
 from langchain_google_genai import ChatGoogleGenerativeAI
 import os
@@ -19,12 +19,7 @@ def get_qa_chain(docs):
         user_agent=os.getenv("USER_AGENT", "docubot")
     )
 
-    vectordb = Chroma.from_documents(
-        documents=texts,
-        embedding=embeddings,
-        collection_name=f"docubot_{uuid.uuid4()}",
-        persist_directory=None
-    )
+    vectordb = FAISS.from_documents(documents=texts,embedding=embeddings)
     retriever = vectordb.as_retriever()
 
     llm = ChatGoogleGenerativeAI(
