@@ -1,0 +1,11 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Streamlit secrets
+.env
+
+# VSCode or PyCharm
+.vscode/
+.idea/
