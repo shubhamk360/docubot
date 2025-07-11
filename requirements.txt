@@ -4,7 +4,7 @@ langchain
 langchain-community
 langchain-cohere
 langchain-google-genai
-cohere
+cohere==5.15.0
 google-generativeai
 PyMuPDF
 python-docx
