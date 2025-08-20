@@ -3,6 +3,7 @@ from rag_utils import get_qa_chain
 class MultiAgentPipeline:
     def __init__(self, docs):
         self.retrieval_chain = get_qa_chain(docs)
+        
 
     def run(self, query, mode="Direct Answer"):
         if mode == "Summarize + Critique":
