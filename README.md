@@ -1,87 +1,21 @@
 <div align="center">
 
-<h1 style="font-size: 3em; background: linear-gradient(to right, #7F7FD5, #86A8E7, #91EAE4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: glow 2s ease-in-out infinite alternate;">
-  ✨ DocuBot ✨
-</h1>
+# ✨ DocuBot ✨
 
-<p style="font-size: 1.5em; color: #6c63ff; margin-bottom: 30px; animation: fadeIn 2s ease-in-out;">Multi-Source AI Document Chatbot</p>
+*Multi-Source AI Document Chatbot*
 
-<img src="https://img.shields.io/badge/Built%20with-LangChain-blue?style=for-the-badge&logo=chainlink" alt="Built with LangChain" />
-<img src="https://img.shields.io/badge/Powered%20by-Cohere-blueviolet?style=for-the-badge&logo=cohere" alt="Powered by Cohere" />
-<img src="https://img.shields.io/badge/AI-Gemini-teal?style=for-the-badge&logo=google" alt="AI Gemini" />
-<img src="https://img.shields.io/badge/UI-Streamlit-red?style=for-the-badge&logo=streamlit" alt="UI Streamlit" />
+[![Built with LangChain](https://img.shields.io/badge/Built%20with-LangChain-blue?style=for-the-badge&logo=chainlink)](https://python.langchain.com/)
+[![Powered by Cohere](https://img.shields.io/badge/Powered%20by-Cohere-blueviolet?style=for-the-badge&logo=cohere)](https://cohere.com/)
+[![AI Gemini](https://img.shields.io/badge/AI-Gemini-teal?style=for-the-badge&logo=google)](https://deepmind.google/)
+[![UI Streamlit](https://img.shields.io/badge/UI-Streamlit-red?style=for-the-badge&logo=streamlit)](https://streamlit.io/)
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/sindresorhus/awesome/main/media/logo.svg" width="400" alt="DocuBot Illustration" style="animation: float 6s ease-in-out infinite;" />
-</p>
+<img src="https://raw.githubusercontent.com/sindresorhus/awesome/main/media/logo.svg" width="400" alt="DocuBot Illustration" />
 
 </div>
-
-<style>
-@keyframes glow {
-  from {
-    text-shadow: 0 0 10px #7F7FD5, 0 0 20px #7F7FD5, 0 0 30px #7F7FD5;
-  }
-  to {
-    text-shadow: 0 0 20px #91EAE4, 0 0 30px #91EAE4, 0 0 40px #91EAE4;
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0px); }
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-.feature-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
-  padding: 20px;
-  margin: 10px 0;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-  animation: pulse 4s infinite;
-}
-
-.feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.tech-pill {
-  display: inline-block;
-  padding: 5px 15px;
-  margin: 5px;
-  border-radius: 20px;
-  background: linear-gradient(45deg, #6c63ff, #4834d4);
-  color: white;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.tech-pill:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(108, 99, 255, 0.5);
-}
-</style>
 
 ## 🌟 Overview
 
 **DocuBot** is an AI-powered multi-agent RAG (Retrieval-Augmented Generation) chatbot that transforms how you interact with documents. Upload various file types or URLs, then ask questions to receive intelligent, context-aware responses through specialized AI agents.
-
-<div class="feature-card">
 
 ## 🚀 Key Features
 
@@ -101,23 +35,15 @@
 - High-quality embeddings for accurate retrieval
 - Context-aware response generation
 
-</div>
-
 ## ✨ Technology Stack
 
-<div style="text-align: center; margin: 30px 0;">
-  <span class="tech-pill">Streamlit</span>
-  <span class="tech-pill">LangChain</span>
-  <span class="tech-pill">Cohere</span>
-  <span class="tech-pill">Gemini</span>
-  <span class="tech-pill">FAISS</span>
-  <span class="tech-pill">PyMuPDF</span>
-  <span class="tech-pill">python-docx</span>
-  <span class="tech-pill">pytesseract</span>
-  <span class="tech-pill">PIL</span>
-  <span class="tech-pill">pytube</span>
-  <span class="tech-pill">yt-dlp</span>
-</div>
+- **Streamlit** — Beautiful interactive UI
+- **LangChain** — RAG pipeline framework
+- **Cohere** — Fast embeddings
+- **Gemini** — Google's next-gen LLM
+- **FAISS** — Vector similarity search
+- **PyMuPDF, python-docx, pytesseract, PIL** — Local parsing & OCR
+- **pytube, yt-dlp** — Robust YouTube caption fallback
 
 ## 🛠️ Architecture
 
@@ -176,9 +102,9 @@ MIT License
 
 ---
 
-<div align="center" style="margin-top: 50px; animation: fadeIn 3s ease-in-out;">
+<div align="center">
   <p>Created with ❤️ by <a href="https://github.com/yourusername">Your Name</a></p>
-  <p style="color: #6c63ff;">✨ Happy Document Chatting! ✨</p>
+  <p>✨ Happy Document Chatting! ✨</p>
 </div>
 
 
