@@ -103,7 +103,7 @@ MIT License
 ---
 
 <div align="center">
-  <p>Created with ❤️ by <a href="https://github.com/yourusername">Your Name</a></p>
+  <p>Created with ❤️ by <a href="https://github.com/shubhamk360">Shubham Kole</a></p>
   <p>✨ Happy Document Chatting! ✨</p>
 </div>
 
